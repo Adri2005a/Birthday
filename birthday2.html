@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Message 💌</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+        color: #ff4f81;
+        text-align: center;
+    }
+    section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    p { max-width: 700px; line-height: 1.6; }
+    button {
+        background-color: #ff4f81;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    button:hover { background-color: #e84370; }
+    .floating-heart {
+        position: fixed;
+        bottom: -50px;
+        font-size: 24px;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+    }
+    @keyframes floatUp {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<section>
+    <h2>💌 Shona Babi,</h2>
+    <p>Happy Birthday Babi! 🎂❤ Aj tor special din, ar ami chai tui shobcheye beshi khushi thak. 
+    Tui amar life-er ekta sweetest part, ar tor chara amar din gula pura boring lage. 
+    Tor shob shopno puro hok, ar amader shobta moments sweet ar memorable hok. 
+    Onno keu jeno tor ekta candle-o blow korte na pare, ami chara! 😏🔥 
+    Love you onek onek! 💖 💖</p>
+    <p>You’re my favorite reason to smile 😊</p>
+    <a href="birthday3.html"><button>Next 🎂</button></a>
+</section>
+
+<script>
+setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart';
+    heart.textContent = '❤';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+}, 500);
+</script>
+
+</body>
+</html>
