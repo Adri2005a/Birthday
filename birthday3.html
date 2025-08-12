@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's Celebrate 🎂</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(135deg, #ffd1dc, #fff5f8);
+        color: #ff4f81;
+        text-align: center;
+    }
+    section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    button {
+        background-color: #ff4f81;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+    button:hover { background-color: #e84370; }
+    #surpriseImage {
+        display: none;
+        max-width: 80%;
+        margin-top: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    .floating-heart {
+        position: fixed;
+        bottom: -50px;
+        font-size: 24px;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+    }
+    @keyframes floatUp {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<section>
+    <h2>🎂 Let's Celebrate! 🎂</h2>
+    <p>Here’s to more adventures, more laughter, and more love! 🥂</p>
+    <button onclick="showSurprise()">Click for Surprise</button>
+    <img id="surpriseImage" src="babi.jpg" alt="Special Surprise">
+</section>
+
+<script>
+setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart';
+    heart.textContent = '❤';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+}, 500);
+
+function showSurprise() {
+    const img = document.getElementById('surpriseImage');
+    img.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
